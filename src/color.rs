@@ -1,7 +1,8 @@
 use colored::*;
 
 pub fn color_line(line: &str, color: &str) -> String {
-    match color {
+    let streamlined_color = &color.to_lowercase()[..];
+    match streamlined_color {
         "black" => line.black().to_string(),
         "red" => line.red().to_string(),
         "green" => line.green().to_string(),

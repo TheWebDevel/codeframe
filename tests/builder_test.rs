@@ -2,7 +2,7 @@ use codeframe::Codeframe;
 extern crate k9;
 
 #[test]
-fn simple_builder() {
+fn simple_capture() {
     let raw_lines = "let a: i64 = 12;";
     let codeframe = Codeframe::new(raw_lines, 1).set_color("red").capture();
     k9::assert_equal!(
@@ -21,7 +21,8 @@ fn simple_builder() {
         }
     };
 }";
-    let codeframe = Codeframe::new(raw_lines, 5).set_color("red").capture();
+    let codeframe = Codeframe::new(raw_lines, 5).set_color("Red").capture();
+
     k9::assert_equal!(
         Some("\u{1b}[2m3 |         #[test]\u{1b}[0m\n\u{1b}[2m4 |         fn $style() {\u{1b}[0m\n\u{1b}[31m5 |             assert_eq!(\u{1b}[0m\n\u{1b}[31m6 |                 s.$style().to_string(),\u{1b}[0m\n\u{1b}[31m7 |                 ansi_term::Style::new().$style().paint(s).to_string()\u{1b}[0m\n\u{1b}[31m8 |             )\u{1b}[0m\n".to_owned()),
         codeframe
@@ -31,7 +32,7 @@ fn simple_builder() {
 #[test]
 fn out_of_bound_line_number() {
     let raw_lines = "let a: i64 = 12;";
-    let codeframe = Codeframe::new(raw_lines, 2).set_color("red").capture();
+    let codeframe = Codeframe::new(raw_lines, 2).set_color("black").capture();
     k9::assert_equal!(
         Some("\u{1b}[2m1 | let a: i64 = 12;\u{1b}[0m\n".to_owned()),
         codeframe
