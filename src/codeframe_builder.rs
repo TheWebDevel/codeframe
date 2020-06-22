@@ -2,7 +2,7 @@
 //!
 //! Ex:
 //! let raw_lines = "let a: i64 = 12;";
-//! let codeframe = Codeframe::new(raw_lines, 1).set_color("red").build();
+//! let codeframe = Codeframe::new(raw_lines, 1).set_color("red").capture();
 //!
 //!
 //! Colors Supported
@@ -37,7 +37,7 @@ impl<'a> Codeframe<'a> {
         self
     }
 
-    pub fn build(self) -> Option<String> {
+    pub fn capture(self) -> Option<String> {
         let vec_lines = self.raw_lines.split('\n').collect();
         capture::capture_code_frame(vec_lines, self.line, self.color)
     }

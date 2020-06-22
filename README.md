@@ -16,7 +16,7 @@ let raw_lines = "macro_rules! test_simple_style {
         }
     };
 }";
-let codeframe = Codeframe::new(raw_lines, 5).set_color("red").build();
+let codeframe = Codeframe::new(raw_lines, 5).set_color("red").capture();
 ```
 
 ![Imgur](https://i.imgur.com/vJzKeCr.png)
