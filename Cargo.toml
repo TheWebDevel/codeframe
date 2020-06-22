@@ -3,7 +3,14 @@ name = "codeframe"
 version = "0.1.0"
 authors = ["TheWebDevel <sathish@skcript.com>"]
 edition = "2018"
+description = "capture pretty codeframes"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/thewebdevel/codeframe"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+colored = "1.9.3"
+k9 = "0.2.1"
+bytecount = "0.6.0"
