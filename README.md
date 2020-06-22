@@ -19,7 +19,6 @@ let raw_lines = "macro_rules! test_simple_style {
 let codeframe = Codeframe::new(raw_lines, 5).set_color("red").build();
 ```
 
-You'll get,
 ![Imgur](https://i.imgur.com/vJzKeCr.png)
 
 ### Colors Supported
@@ -38,5 +37,5 @@ You'll get,
 - [x] line
 - [x] raw lines
 - [x] color
-- [] codeframe!() or codeframe!("red") Macro
-- [] set column, line_above & line_below
+- [ ] codeframe!() or codeframe!("red") Macro
+- [ ] set column, line_above & line_below
