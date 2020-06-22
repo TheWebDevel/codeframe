@@ -37,5 +37,8 @@ let codeframe = Codeframe::new(raw_lines, 5).set_color("red").build();
 - [x] line
 - [x] raw lines
 - [x] color
+- [ ] file path
 - [ ] codeframe!() or codeframe!("red") Macro
-- [ ] set column, line_above & line_below
+- [ ] with column (Highlight Column)
+- [ ] with line_above
+- [ ] with line_below
