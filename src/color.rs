@@ -1,17 +1,28 @@
 use colored::*;
 
-pub fn color_line(line: &str, color: &str) -> String {
-    let streamlined_color = &color.to_lowercase()[..];
-    match streamlined_color {
-        "black" => line.black().to_string(),
-        "red" => line.red().to_string(),
-        "green" => line.green().to_string(),
-        "yellow" => line.yellow().to_string(),
-        "blue" => line.blue().to_string(),
-        "magenta" => line.magenta().to_string(),
-        "purple" => line.purple().to_string(),
-        "cyan" => line.cyan().to_string(),
-        "white" => line.white().to_string(),
-        _ => line.red().to_string(),
+#[derive(Clone, Copy)]
+pub enum Color {
+    Black,
+    Blue,
+    Cyan,
+    Green,
+    Magenta,
+    Purple,
+    Red,
+    White,
+    Yellow,
+}
+
+pub fn color_line(line: &str, color: Color) -> String {
+    match color {
+        Color::Black => line.black().to_string(),
+        Color::Red => line.red().to_string(),
+        Color::Green => line.green().to_string(),
+        Color::Yellow => line.yellow().to_string(),
+        Color::Blue => line.blue().to_string(),
+        Color::Magenta => line.magenta().to_string(),
+        Color::Purple => line.purple().to_string(),
+        Color::Cyan => line.cyan().to_string(),
+        Color::White => line.white().to_string(),
     }
 }

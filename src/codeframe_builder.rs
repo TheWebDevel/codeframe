@@ -16,23 +16,24 @@
 //! White
 
 use crate::capture;
+use crate::Color;
 
-pub struct Codeframe<'a> {
-    color: &'a str,
+pub struct Codeframe {
+    color: Color,
     line: i64,
     raw_lines: String,
 }
 
-impl<'a> Codeframe<'a> {
-    pub fn new(raw_lines: String, line: i64) -> Codeframe<'a> {
+impl Codeframe {
+    pub fn new(raw_lines: String, line: i64) -> Codeframe {
         Codeframe {
-            color: "red",
+            color: Color::Red,
             line,
             raw_lines,
         }
     }
 
-    pub fn set_color(mut self, color: &'a str) -> Self {
+    pub fn set_color(mut self, color: Color) -> Self {
         self.color = color;
         self
     }
