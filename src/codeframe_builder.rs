@@ -39,12 +39,7 @@ impl Codeframe {
     }
 
     pub fn capture(self) -> Option<String> {
-        let vec_lines = self
-            .raw_lines
-            .split('\n')
-            .into_iter()
-            .map(|s| s.to_owned())
-            .collect();
+        let vec_lines = self.raw_lines.split('\n').map(|s| s.to_owned()).collect();
         capture::capture_codeframe(vec_lines, self.line, self.color)
     }
 }
