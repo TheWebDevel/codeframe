@@ -1,6 +1,12 @@
-## Codeframe
+# Codeframe
 
-Capture pretty codeframes from a code snippet.
+[![Crates.io][crates-badge]][crates-url]
+![Rust CI](https://github.com/thewebdevel/codeframe/workflows/Rust%20CI/badge.svg)
+
+[crates-badge]: https://img.shields.io/crates/v/codeframe.svg
+[crates-url]: https://crates.io/crates/codeframe
+
+Capture pretty codeframes.
 
 ```rust
 use codeframe::Codeframe;
