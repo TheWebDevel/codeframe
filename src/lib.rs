@@ -9,3 +9,5 @@ mod color;
 mod utils;
 
 pub use crate::codeframe_builder::Codeframe;
+
+pub use color::Color;

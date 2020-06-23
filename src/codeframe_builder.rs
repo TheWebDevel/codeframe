@@ -18,7 +18,7 @@
 use crate::capture;
 
 pub struct Codeframe<'a> {
-    color: &'a str,
+    color: crate::Color,
     line: i64,
     raw_lines: &'a str,
 }
@@ -26,13 +26,13 @@ pub struct Codeframe<'a> {
 impl<'a> Codeframe<'a> {
     pub fn new(raw_lines: &'a str, line: i64) -> Codeframe<'a> {
         Codeframe {
-            color: "red",
+            color: crate::Color::Red,
             line,
             raw_lines,
         }
     }
 
-    pub fn set_color(mut self, color: &'a str) -> Self {
+    pub fn set_color(mut self, color: crate::Color) -> Self {
         self.color = color;
         self
     }
