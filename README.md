@@ -10,7 +10,7 @@ Capture pretty code-frames.
 
 ### capture_codeframe!()
 
-`capture_codeframe!()` makes use of [line!]("https://doc.rust-lang.org/1.2.0/std/macro.line!.html") and [file!]("https://doc.rust-lang.org/1.2.0/std/macro.file!.html") to capture the codeframe from the place it was originally invoked.
+`capture_codeframe!()` makes use of [line!](https://doc.rust-lang.org/1.2.0/std/macro.line!.html) and [file!](https://doc.rust-lang.org/1.2.0/std/macro.file!.html) to capture the codeframe from the place it was originally invoked.
 
 #### Example
 
