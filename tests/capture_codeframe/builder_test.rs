@@ -31,7 +31,7 @@ fn simple_capture() {
 
     assert_matches_inline_snapshot!(
         format!("\n{}", codeframe.expect("must be present")),
-         "
+        "
 [2m3 |         #[test][0m
 [2m4 |         fn $style() {[0m
 [31m5 |             assert_eq!([0m
