@@ -1,10 +1,11 @@
+use codeframe::capture_codeframe;
 use codeframe::Codeframe;
 extern crate k9;
 
 #[test]
 fn simple_capture() {
     setup_test_env();
-    let raw_lines = "let a: i64 = 12;";
+    let raw_lines = "let a: i64 = 12;".to_owned();
     let codeframe = Codeframe::new(raw_lines, 1).set_color("red").capture();
     k9::assert_equal!(
         Some("\u{1b}[31m1 | let a: i64 = 12;\u{1b}[0m\n".to_owned()),
@@ -21,7 +22,8 @@ fn simple_capture() {
             )
         }
     };
-}";
+}"
+    .to_owned();
     let codeframe = Codeframe::new(raw_lines, 5).set_color("Red").capture();
 
     k9::assert_equal!(
@@ -30,15 +32,26 @@ fn simple_capture() {
     );
 }
 
+macro_rules! say_hello {
+    () => {{
+        let codeframe = capture_codeframe!("BlUe");
+        if let Some(codeframe) = codeframe {
+            println!("{}", codeframe)
+        }
+    }};
+}
+
 #[test]
 fn out_of_bound_line_number() {
     setup_test_env();
-    let raw_lines = "let a: i64 = 12;";
+    let raw_lines = "let a: i64 = 12;".to_owned();
     let codeframe = Codeframe::new(raw_lines, 2).set_color("black").capture();
     k9::assert_equal!(
         Some("\u{1b}[2m1 | let a: i64 = 12;\u{1b}[0m\n".to_owned()),
         codeframe
     );
+
+    say_hello!()
 }
 
 fn setup_test_env() {

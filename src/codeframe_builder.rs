@@ -20,11 +20,11 @@ use crate::capture;
 pub struct Codeframe<'a> {
     color: &'a str,
     line: i64,
-    raw_lines: &'a str,
+    raw_lines: String,
 }
 
 impl<'a> Codeframe<'a> {
-    pub fn new(raw_lines: &'a str, line: i64) -> Codeframe<'a> {
+    pub fn new(raw_lines: String, line: i64) -> Codeframe<'a> {
         Codeframe {
             color: "red",
             line,
@@ -38,7 +38,12 @@ impl<'a> Codeframe<'a> {
     }
 
     pub fn capture(self) -> Option<String> {
-        let vec_lines = self.raw_lines.split('\n').collect();
-        capture::capture_code_frame(vec_lines, self.line, self.color)
+        let vec_lines = self
+            .raw_lines
+            .split('\n')
+            .into_iter()
+            .map(|s| s.to_owned())
+            .collect();
+        capture::capture_codeframe(vec_lines, self.line, self.color)
     }
 }
