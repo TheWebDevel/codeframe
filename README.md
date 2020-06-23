@@ -8,11 +8,11 @@
 
 Capture pretty code-frames.
 
-### capture_codeframe!()
+## capture_codeframe!()
 
 `capture_codeframe!()` makes use of [line!](https://doc.rust-lang.org/1.2.0/std/macro.line!.html) and [file!](https://doc.rust-lang.org/1.2.0/std/macro.file!.html) to capture the codeframe from the place it was originally invoked.
 
-#### Example
+### Example
 
 Imagine having a macro `assert_equal!(left, right)` that checks whether left is equal to right. We can use `capture_codeframe!()` to get code-frame of `assert_equal!(left, right)` invocation with some context.
 
@@ -46,7 +46,7 @@ Note `let codeframe = capture_codeframe!(Color::Blue);` in the `assert_equal` ma
 
 ![Output](https://i.imgur.com/JwWMP7m.png)
 
-#### Usage
+### Usage
 
 - `capture_codeframe!()`
 - `capture_codeframe!(Color::Red)`
@@ -54,7 +54,7 @@ Note `let codeframe = capture_codeframe!(Color::Blue);` in the `assert_equal` ma
 
 [View currently supported colors](https://github.com/TheWebDevel/codeframe#colors-supported)
 
-### Codeframe with Snippets
+## Codeframe with Snippets
 
 You can also capture codeframes with code snippet by making use of the Builder Pattern.
 
@@ -81,7 +81,7 @@ The Builder takes raw lines and line number(to highlight) as mandatory arguments
 
 ![Output](https://i.imgur.com/QORF7RQ.png)
 
-#### Usage
+### Usage
 
 - `Codeframe::new(raw_lines, 5).capture();`
 - `Codeframe::new(raw_lines, 5).set_color(Color::Red).capture();`
@@ -89,11 +89,11 @@ The Builder takes raw lines and line number(to highlight) as mandatory arguments
 
 [View currently supported colors](https://github.com/TheWebDevel/codeframe#colors-supported)
 
-### Return Type
+## Return Type
 
 `Option<String>`
 
-### Colors Supported
+## Colors Supported
 
 - Black
 - Red
@@ -104,13 +104,13 @@ The Builder takes raw lines and line number(to highlight) as mandatory arguments
 - Cyan
 - White
 
-### Features
+## Features
 
-#### Macro
+### Macro
 
 - [x] [capture_codeframe!](https://github.com/TheWebDevel/codeframe#capture_codeframe)
 
-#### Builder Pattern
+### Builder Pattern
 
 - [x] [raw lines](https://github.com/TheWebDevel/codeframe#codeframe-with-snippets)
 - [x] [line to highlight](https://github.com/TheWebDevel/codeframe#codeframe-with-snippets)
