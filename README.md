@@ -1,7 +1,5 @@
 ## Codeframe
 
-![Rust CI](https://github.com/TheWebDevel/codeframe/workflows/Rust%20CI/badge.svg)
-
 Capture pretty codeframes from a code snippet.
 
 ```rust
