@@ -1,4 +1,4 @@
-use codeframe::{capture_codeframe, Codeframe, Color};
+use codeframe::{Codeframe, Color};
 
 use k9::*;
 
@@ -42,15 +42,6 @@ fn simple_capture() {
     );
 }
 
-macro_rules! say_hello {
-    () => {{
-        let codeframe = capture_codeframe!(Color::Blue);
-        if let Some(codeframe) = codeframe {
-            println!("{}", codeframe)
-        }
-    }};
-}
-
 #[test]
 fn out_of_bound_line_number() {
     setup_test_env();
@@ -64,8 +55,6 @@ fn out_of_bound_line_number() {
 [2m1 | let a: i64 = 12;[0m
 "
     );
-
-    say_hello!()
 }
 
 fn setup_test_env() {

@@ -6,7 +6,7 @@
 [crates-badge]: https://img.shields.io/crates/v/codeframe.svg
 [crates-url]: https://crates.io/crates/codeframe
 
-Capture pretty codeframes.
+Capture pretty code-frames.
 
 ```rust
 use codeframe::{Color, Codeframe};
@@ -43,8 +43,8 @@ let codeframe = Codeframe::new(raw_lines, 5).set_color(Color::Red).capture();
 - [x] line
 - [x] raw lines
 - [x] color
+- [x] capture_codeframe!()
 - [ ] file path
-- [ ] codeframe!() or codeframe!("red") Macro
 - [ ] with column (Highlight Column)
 - [ ] with line_above
 - [ ] with line_below
