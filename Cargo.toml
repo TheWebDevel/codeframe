@@ -1,6 +1,6 @@
 [package]
 name = "codeframe"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["TheWebDevel <sathish@skcript.com>"]
 edition = "2018"
 description = "Capture pretty codeframes."
