@@ -4,7 +4,7 @@ see https://github.com/thewebdevel/codeframe for high level description of the l
 
 pub mod capture;
 mod codeframe_builder;
-mod color;
+pub mod color;
 mod utils;
 
 pub mod codeframe_macro;

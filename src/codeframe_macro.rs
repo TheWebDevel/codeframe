@@ -12,11 +12,12 @@ pub fn read_file(filename: &str) -> Vec<String> {
 #[macro_export]
 macro_rules! capture_codeframe {
     () => {{
+        use $crate::color::Color;
         let line = line!() as i64;
         let file = file!();
         let lines = $crate::codeframe_macro::read_file(file);
         use $crate::capture::capture_codeframe;
-        let codeframe = capture_codeframe(lines, line, "red");
+        let codeframe = capture_codeframe(lines, line, Color::Red);
         codeframe
     }};
     ($color:expr) => {{
