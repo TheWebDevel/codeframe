@@ -4,7 +4,7 @@ use k9::*;
 
 #[test]
 fn simple_capture() {
-    setup_test_env();
+    super::setup_test_env();
     let raw_lines = "let a: i64 = 12;".to_owned();
     let codeframe = Codeframe::new(raw_lines, 1).set_color(Color::Red).capture();
 
@@ -44,7 +44,7 @@ fn simple_capture() {
 
 #[test]
 fn out_of_bound_line_number() {
-    setup_test_env();
+    super::setup_test_env();
     let raw_lines = "let a: i64 = 12;".to_owned();
     let codeframe = Codeframe::new(raw_lines, 2)
         .set_color(Color::Black)
@@ -55,8 +55,4 @@ fn out_of_bound_line_number() {
 [2m1 | let a: i64 = 12;[0m
 "
     );
-}
-
-fn setup_test_env() {
-    colored::control::set_override(true);
 }
