@@ -1,9 +1,9 @@
 [package]
 name = "codeframe"
-version = "0.1.3"
+version = "0.1.4"
 authors = ["TheWebDevel <sathish@skcript.com>"]
 edition = "2018"
-description = "Capture pretty codeframes."
+description = "Capture pretty code-frames."
 readme = "README.md"
 license = "MIT"
 repository = "https://github.com/thewebdevel/codeframe"
