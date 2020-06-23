@@ -10,7 +10,7 @@ Capture pretty code-frames.
 
 ### capture_codeframe!()
 
-`capture_codeframe!()` makes use of [line!()]("https://doc.rust-lang.org/1.2.0/std/macro.line!.html") and [file!()]("https://doc.rust-lang.org/1.2.0/std/macro.file!.html") to capture the codeframe from the place it was originally invoked.
+`capture_codeframe!()` makes use of [line!]("https://doc.rust-lang.org/1.2.0/std/macro.line!.html") and [file!]("https://doc.rust-lang.org/1.2.0/std/macro.file!.html") to capture the codeframe from the place it was originally invoked.
 
 #### Example
 
@@ -52,6 +52,8 @@ Note `let codeframe = capture_codeframe!(Color::Blue);` in the `assert_equal` ma
 - `capture_codeframe!(Color::Red)`
 - `capture_codeframe!(Color::Blue)`
 
+[View currently supported colors](https://github.com/TheWebDevel/codeframe#colors-supported)
+
 ### Codeframe with Snippets
 
 You can also capture codeframes with code snippet by making use of the Builder Pattern.
@@ -85,6 +87,8 @@ The Builder takes raw lines and line number(to highlight) as mandatory arguments
 - `Codeframe::new(raw_lines, 5).set_color(Color::Red).capture();`
 - `Codeframe::new(raw_lines, 5).set_color(Color::Blue).capture();`
 
+[View currently supported colors](https://github.com/TheWebDevel/codeframe#colors-supported)
+
 ### Return Type
 
 `Option<String>`
@@ -102,10 +106,15 @@ The Builder takes raw lines and line number(to highlight) as mandatory arguments
 
 ### Features
 
-- [x] line
-- [x] raw lines
-- [x] color
-- [x] capture_codeframe!()
+#### Macro
+
+- [x] [capture_codeframe!](https://github.com/TheWebDevel/codeframe#capture_codeframe)
+
+#### Builder Pattern
+
+- [x] [raw lines](https://github.com/TheWebDevel/codeframe#codeframe-with-snippets)
+- [x] [line to highlight](https://github.com/TheWebDevel/codeframe#codeframe-with-snippets)
+- [x] [color](https://github.com/TheWebDevel/codeframe#codeframe-with-snippets)
 - [ ] file path
 - [ ] with column (Highlight Column)
 - [ ] with line_above
