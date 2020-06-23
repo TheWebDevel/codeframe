@@ -14,5 +14,7 @@ categories = ["development-tools", "command-line-interface"]
 
 [dependencies]
 colored = "1.9.3"
-k9 = "0.2.1"
 bytecount = "0.6.0"
+
+[dev-dependencies]
+k9 = "0.2.1"
