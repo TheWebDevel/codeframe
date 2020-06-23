@@ -23,7 +23,7 @@ fn with_color() {
     if let Some(_codeframe) = &codeframe {}
     assert_matches_inline_snapshot!(
         format!("\n{}", &codeframe.expect("must be present")),
-         "
+        "
 [2m20 | fn with_color() {[0m
 [2m21 |     super::setup_test_env();[0m
 [34m22 |     let codeframe = get_codeframe!();[0m
@@ -40,7 +40,7 @@ fn without_color() {
     if let Some(_codeframe) = &codeframe {}
     assert_matches_inline_snapshot!(
         format!("\n{}", &codeframe.expect("must be present")),
-         "
+        "
 [2m37 | fn without_color() {[0m
 [2m38 |     super::setup_test_env();[0m
 [31m39 |     let codeframe = get_codeframe_with_default_color!();[0m
