@@ -1,13 +1,18 @@
 use codeframe::{capture_codeframe, Codeframe, Color};
 
+use k9::*;
+
 #[test]
 fn simple_capture() {
     setup_test_env();
     let raw_lines = "let a: i64 = 12;".to_owned();
     let codeframe = Codeframe::new(raw_lines, 1).set_color(Color::Red).capture();
-    k9::assert_equal!(
-        Some("\u{1b}[31m1 | let a: i64 = 12;\u{1b}[0m\n".to_owned()),
-        codeframe
+
+    assert_matches_inline_snapshot!(
+        format!("\n{}", codeframe.expect("must be present")),
+        "
+[31m1 | let a: i64 = 12;[0m
+"
     );
 
     let raw_lines = "macro_rules! test_simple_style {
@@ -24,9 +29,16 @@ fn simple_capture() {
     .to_owned();
     let codeframe = Codeframe::new(raw_lines, 5).set_color(Color::Red).capture();
 
-    k9::assert_equal!(
-        Some("\u{1b}[2m3 |         #[test]\u{1b}[0m\n\u{1b}[2m4 |         fn $style() {\u{1b}[0m\n\u{1b}[31m5 |             assert_eq!(\u{1b}[0m\n\u{1b}[31m6 |                 s.$style().to_string(),\u{1b}[0m\n\u{1b}[31m7 |                 ansi_term::Style::new().$style().paint(s).to_string()\u{1b}[0m\n\u{1b}[31m8 |             )\u{1b}[0m\n".to_owned()),
-        codeframe
+    assert_matches_inline_snapshot!(
+        format!("\n{}", codeframe.expect("must be present")),
+        "
+[2m3 |         #[test][0m
+[2m4 |         fn $style() {[0m
+[31m5 |             assert_eq!([0m
+[31m6 |                 s.$style().to_string(),[0m
+[31m7 |                 ansi_term::Style::new().$style().paint(s).to_string()[0m
+[31m8 |             )[0m
+"
     );
 }
 
@@ -46,9 +58,11 @@ fn out_of_bound_line_number() {
     let codeframe = Codeframe::new(raw_lines, 2)
         .set_color(Color::Black)
         .capture();
-    k9::assert_equal!(
-        Some("\u{1b}[2m1 | let a: i64 = 12;\u{1b}[0m\n".to_owned()),
-        codeframe
+    assert_matches_inline_snapshot!(
+        format!("\n{}", codeframe.expect("must be present")),
+        "
+[2m1 | let a: i64 = 12;[0m
+"
     );
 
     say_hello!()
