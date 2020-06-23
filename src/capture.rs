@@ -8,7 +8,7 @@ const DEFAULT_START_LINE: i64 = 1;
 const MAX_CODEFRAME_LENGTH: usize = 100;
 const MIN_CODEFRAME_LENGTH: usize = 5;
 
-pub fn capture_code_frame(lines: Vec<&str>, line: i64, color: &str) -> Option<String> {
+pub fn capture_code_frame(lines: Vec<&str>, line: i64, color: crate::Color) -> Option<String> {
     let mut result = String::new();
     let call_line = line;
     let mut start_loc: i64 = call_line - DEFAULT_LINE_ABOVE;
