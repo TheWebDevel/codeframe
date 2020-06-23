@@ -34,10 +34,7 @@ jobs:
       - uses: actions-rs/cargo@v1
 
       - name: Run tests
-        run: cargo test --verbose
-
-      - name: Run tests (without default features)
-        run: cargo test --no-default-features --verbose
+        run: K9_UPDATE_SNAPSHOTS=1 cargo test --verbose
 
       - name: Check formatting
         run: cargo fmt --all -- --check
