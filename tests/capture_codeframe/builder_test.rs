@@ -29,21 +29,17 @@ fn simple_capture() {
     .to_owned();
     let codeframe = Codeframe::new(raw_lines, 5).set_color(Color::Red).capture();
 
-    if let Some(codeframe) = codeframe {
-        println!("{}", codeframe)
-    }
-
-    //     assert_matches_inline_snapshot!(
-    //         format!("\n{}", codeframe.expect("must be present")),
-    //         "
-    // [2m3 |         #[test][0m
-    // [2m4 |         fn $style() {[0m
-    // [31m5 |             assert_eq!([0m
-    // [31m6 |                 s.$style().to_string(),[0m
-    // [31m7 |                 ansi_term::Style::new().$style().paint(s).to_string()[0m
-    // [31m8 |             )[0m
-    // "
-    //     );
+    assert_matches_inline_snapshot!(
+        format!("\n{}", codeframe.expect("must be present")),
+         "
+[2m3 |         #[test][0m
+[2m4 |         fn $style() {[0m
+[31m5 |             assert_eq!([0m
+[31m6 |                 s.$style().to_string(),[0m
+[31m7 |                 ansi_term::Style::new().$style().paint(s).to_string()[0m
+[31m8 |             )[0m
+"
+    );
 }
 
 #[test]
