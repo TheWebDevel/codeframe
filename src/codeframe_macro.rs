@@ -10,7 +10,7 @@ pub fn read_file(filename: &str) -> Vec<String> {
 }
 
 #[macro_export]
-macro_rules! capture_codeframe {
+macro_rules! capture {
     () => {{
         use $crate::color::Color;
         let line = line!() as i64;
