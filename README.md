@@ -22,7 +22,7 @@ use codeframe::{capture_codeframe, Color};
 macro_rules! assert_equal {
     ($left:expr, $right:expr) => {{
         if $left != $right {
-            let codeframe = capture_codeframe!(Color::Blue);
+            let codeframe = capture_codeframe!(Color::Red);
             println!("Left does not match Right");
             if let Some(codeframe) = codeframe {
                 println!("{}", codeframe)
@@ -40,7 +40,7 @@ fn with_context() {
 
 ```
 
-Note `let codeframe = capture_codeframe!(Color::Blue);` in the `assert_equal` macro. This captures the code-frame where it was originally invoked. In our case, `assert_equal!(1, 2);`. So the output would be:
+Note `let codeframe = capture_codeframe!(Color::Red);` in the `assert_equal` macro. This captures the code-frame where it was originally invoked. In our case, `assert_equal!(1, 2);`. So the output would be:
 
 ![Output](https://i.imgur.com/JwWMP7m.png)
 
